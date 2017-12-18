@@ -241,7 +241,7 @@ services:
     volumes:
       - "./etc/rest-api:/usr/local/tomcat/conf/radar"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/radar/api/source/specification/ANDROID"]
+      test: ["CMD", "curl", "-f", "http://localhost:8080/radar/api/source/specification/EMPATICA"]
       interval: 1m
       timeout: 5s
       retries: 3
