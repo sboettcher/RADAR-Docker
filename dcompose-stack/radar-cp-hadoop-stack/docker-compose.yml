@@ -356,7 +356,7 @@ services:
   # RADAR mongo connector                                                     #
   #---------------------------------------------------------------------------#
   radar-mongodb-connector:
-    image: radarcns/radar-mongodb-connector-auto:0.1
+    image: radarcns/kafka-connect-mongodb-sink:0.2.0
     restart: on-failure
     volumes:
       - ./etc/sink-mongo.properties:/etc/kafka-connect/sink.properties
@@ -570,7 +570,7 @@ services:
   # Management Portal                                                         #
   #---------------------------------------------------------------------------#
   managementportal-app:
-    image: radarcns/management-portal:0.3.1
+    image: radarcns/management-portal:0.3.3
     networks:
       - default
       - api
@@ -603,7 +603,7 @@ services:
 
 
   managementportal-postgresql:
-    image: postgres:9.6.2
+    image: postgres:9.6.6
     volumes:
       - "${MP_POSTGRES_DIR}/data/:/var/lib/postgresql/data/"
     environment:
